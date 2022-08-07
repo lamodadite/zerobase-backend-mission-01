@@ -41,6 +41,16 @@
             <version>1.18.24</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.xiandan</groupId>
+            <artifactId>gson-ktx</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.xiandan</groupId>
+            <artifactId>json-ktx</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
