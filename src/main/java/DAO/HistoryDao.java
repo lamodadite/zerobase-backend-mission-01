@@ -29,11 +29,10 @@ public class HistoryDao extends DbController {
             dbDisconnect();
         }
     }
-    public List<HistoryDto> selectHistory(){
+    public List<HistoryDto> selectHistory() throws SQLException {
         List<HistoryDto> list = new ArrayList<>();
         String query = "SELECT * FROM HISTORY;";
-
-
+        dbConnect();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
@@ -53,5 +52,18 @@ public class HistoryDao extends DbController {
         }
 
         return list;
+    }
+
+    public void deleteHistory() throws SQLException {
+        String query = "DELETE FROM HISTORY";
+        dbConnect();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            dbDisconnect();
+        }
     }
 }
