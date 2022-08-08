@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zerobase-backend-mission-01:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="zerobase-backend-mission-01-1.0-SNAPSHOT.war" />
+  </artifact>
+</component>

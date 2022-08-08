@@ -4,13 +4,13 @@ import API.ApiController;
 import DB.DbController;
 import DTO.WifiDto;
 
+import javax.servlet.annotation.WebServlet;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
-
 
 public class WifiDao extends DbController {
     public void insertWifiInfo () throws SQLException {

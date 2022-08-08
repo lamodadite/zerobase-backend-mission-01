@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<title>Hello, world!</title>
+<title>와이파이 정보 구하기</title>
 <script>
     $(function(){
         let lat = '<%= request.getParameter("lat") %>';
@@ -23,14 +22,11 @@
         console.log(lnt);
     });
     function getMyLocation() {
-        // 위치 정보 획득
         navigator.geolocation.getCurrentPosition(function (pos){
             let latVal = pos.coords.latitude;
             let lntVal = pos.coords.longitude;
-            // 획득한 위치 정보 값 세팅
             $('#lat').val(latVal);
             $('#lnt').val(lntVal);
-            // DB에 위치 정보 값 추가
             $.ajax({
                 method: 'GET',
                 url: '/locationHistory',
@@ -74,12 +70,12 @@
 <div class="Div2">
     LAT: <input id="lat" type="text" value="0.0">
     ,LNT: <input id = "lnt" type="text" value="0.0">
-    <button onclick="getMyLocation()">내 위치 가져오기</button>
-    <button onclick="getAroundWifiInfo()">근처 WIPI 정보 보기</button>
+    <button type="button" class="btn btn-lg btn-pill btn-primary" onclick="getMyLocation()">내 위치 가져오기</button>
+    <button type="button" class="btn btn-lg btn-pill btn-primary" onclick="getAroundWifiInfo()">근처 WIPI 정보 보기</button>
 </div>
 
 <table class="table table-striped table-bordered">
-    <thead class="thead-light">
+    <thead class="table-primary">
     <tr>
         <th>거리(Km)</th>
         <th>관리번호</th>

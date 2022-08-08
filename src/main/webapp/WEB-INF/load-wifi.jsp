@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ page import="DAO.WifiDao" %>
-<%@ page import="DB.DbController" %>
 <%@ page import="API.ApiController" %>
 
 
